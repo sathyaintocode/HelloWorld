@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/<your-org>/<demo-repo>.git'
+                git 'https://github.com/Vipul-0722/jenkins_starter.git'
             }
         }
         stage('Build') {
