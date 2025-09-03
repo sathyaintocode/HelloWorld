@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-       docker { image 'python:3.10' }
-     }
+    agent any
     stages {
         stage('Checkout') {
             steps {
@@ -13,9 +11,10 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo Building app...'
-                sh 'python3 app.py'
+                sh 'python3 --version || python --version'
+                sh 'python3 app.py || python app.py'
             }
-        }
+    }
         stage('Test') {
             steps {
                 sh 'echo Running tests...'
