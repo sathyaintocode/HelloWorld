@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Vipul-0722/jenkins_starter.git'
+                git branch: 'main',
+                    url: 'https://github.com/Vipul-0722/jenkins_starter.git',
+                    credentialsId: 'ecf815ab-0b0f-442a-9767-d2b76edddaf6'
             }
         }
         stage('Build') {
